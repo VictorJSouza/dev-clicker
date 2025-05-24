@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://drk0h4xi2nxoc"]
+
+[ext_resource type="Script" uid="uid://ip08rcay2t00" path="res://main.gd" id="1_pq84c"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_pq84c")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelCodigo" type="Label" parent="CanvasLayer"]
+offset_left = 398.0
+offset_top = 303.0
+offset_right = 505.0
+offset_bottom = 326.0
+
+[node name="BotaoClick" type="Button" parent="CanvasLayer"]
+offset_left = 525.0
+offset_top = 302.0
+offset_right = 637.0
+offset_bottom = 333.0
+text = "Gerar código "
+
+[node name="BotaoUpgrade20" type="Button" parent="CanvasLayer"]
+offset_left = 526.0
+offset_top = 354.0
+offset_right = 678.0
+offset_bottom = 385.0
+text = "Upgrade custo 20"
+
+[node name="BotaoUpgrade40" type="Button" parent="CanvasLayer"]
+offset_left = 526.0
+offset_top = 406.0
+offset_right = 678.0
+offset_bottom = 437.0
+text = "Upgrade custo 40  "
+
+[node name="BotaoUpgrade100" type="Button" parent="CanvasLayer"]
+offset_left = 526.0
+offset_top = 458.0
+offset_right = 678.0
+offset_bottom = 489.0
+text = "Upgrade custo 100"
+
+[connection signal="pressed" from="CanvasLayer/BotaoClick" to="." method="_on_botao_click_pressed"]
+[connection signal="pressed" from="CanvasLayer/BotaoUpgrade20" to="." method="_on_botao_upgrade_pressed" binds= [20]]
+[connection signal="pressed" from="CanvasLayer/BotaoUpgrade40" to="." method="_on_botao_upgrade_pressed" binds= [40]]
+[connection signal="pressed" from="CanvasLayer/BotaoUpgrade100" to="." method="_on_botao_upgrade_pressed" binds= [100]]
